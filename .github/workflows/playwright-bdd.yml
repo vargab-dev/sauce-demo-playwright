@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: 🧾 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: 🐳 Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v2
 
       - name: 🏗️ Build Docker image
         run: docker build -t saucedemo-bdd .
@@ -32,7 +32,7 @@ jobs:
         run: docker rm -f saucedemo-bdd || true
 
       - name: 📎 Upload test report (HTML + JSON)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: cucumber-reports
           path: reports/
