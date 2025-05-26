@@ -22,11 +22,11 @@ jobs:
 
       - name: 🚀 Run tests in Docker
         run: |
-          docker run --name saucedemo-bdd saucedemo-bdd || true
+          docker run --name saucedemo-bdd saucedemo-bdd || echo "Tests failed but continuing to get reports"
 
       - name: 💾 Copy report from container
         run: |
-          docker cp saucedemo-bdd:/app/reports ./reports || true
+          docker cp saucedemo-bdd:/app/reports ./reports || echo "No reports found"
 
       - name: 🧹 Cleanup container
         run: docker rm -f saucedemo-bdd || true
