@@ -1,0 +1,35 @@
+name: Playwright BDD Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  bdd-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐳 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: 🏗️ Build Docker image
+        run: docker build -t saucedemo-bdd .
+
+      - name: 🚀 Run tests in Docker
+        run: |
+          docker run --name saucedemo-bdd saucedemo-bdd
+
+      - name: 💾 Copy report from container
+        run: |
+          docker cp saucedemo-bdd:/app/reports ./reports || true
+
+      - name: 📎 Upload test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-html-report
+          path: reports/

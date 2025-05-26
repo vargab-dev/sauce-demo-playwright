@@ -1,0 +1,113 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality;successful-login",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Successful login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "features/step_definitions/login.step.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 322629833
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I login with username \"standard_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "features/step_definitions/login.step.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 129628916
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I should be redirected to the inventory page",
+            "match": {
+              "location": "features/step_definitions/login.step.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22398957
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-functionality;unsuccessful-login",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Unsuccessful login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "features/step_definitions/login.step.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 269518292
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I login with username \"invalid_user\" and password \"wrong_pass\"",
+            "match": {
+              "location": "features/step_definitions/login.step.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85047833
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should see an error message",
+            "match": {
+              "location": "features/step_definitions/login.step.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22369458
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login functionality",
+    "tags": [],
+    "uri": "features/login.feature"
+  }
+]
